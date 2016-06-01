@@ -1,0 +1,30 @@
+<%= render 'carousel', study: @carousel_study %>
+<%= render 'last_studies', studies: @last_studies %>
+<div class=row>
+  <div class="col-md-12">
+    <div class="block block-blue block-content">
+      <h2 class="block-full-title text-white">LA DEMARCHE</h2>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="block block-content white-block block-demarche text-center">
+      <%= image_tag 'demarche-etudes.png', class: "demarche-icon" %>
+      <h1 class="demarche-title">Études</h1>
+      <p>Data Expéditions compile les recherches menées par SNCF Transilien et ses partenaires sur les mobilités franciliennes. Etude des flux de voyageurs sur le réseau Transilien, impact des grands événements sur les déplacements en Ile-de-France, expérimentations autour de la collecte innovante de données… Vous retrouverez l’ensemble de nos articles sur ce site.</p>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="block block-content white-block block-demarche text-center">
+      <%= image_tag 'demarche-donnees-ouvertes.png', class: 'demarche-icon' %>
+      <h1 class="demarche-title">Données ouvertes</h1>
+      <p>Parce que les données issues du terrain sont le bras armé des Data Expéditions, SNCF Transilien met à disposition en formats libres et réutilisables l’ensemble des données auxquelles font référence les analyses publiées ici. Développeurs, chercheurs, startups, datajournalistes et curieux de tous horizons, vous êtes invités à découvrir et forker nos données sur Github.</p>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="block block-content white-block block-demarche text-center">
+      <%= image_tag 'demarche-rencontres.png', class: 'demarche-icon' %>
+      <h1 class="demarche-title">Rencontres</h1>
+      <p>Les Data Expéditions sont également une série de rendez-vous ouverts à tous pour comprendre et anticiper l’évolution des mobilités en Ile-de-France.</p>
+    </div>
+  </div>
+</div>

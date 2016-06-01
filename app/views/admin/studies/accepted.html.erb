@@ -1,0 +1,24 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Auteur</th>
+      <th>Accepté le</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @studies.each do |study| %>
+      <tr>
+        <td><%= study.title %></td>
+        <td><%= study.author.name %></td>
+        <td><%= time_ago_in_words(study.accepted_at) %></td>
+        <td>
+          <%= link_to icon('eye', 'voir'), study_path(study), class: 'btn btn-default btn-xs' %>
+          <%= link_to icon('edit', 'modifier'), edit_admin_study_path(study), class: 'btn btn-default btn-xs' %>
+          <%= link_to icon('image', 'placer dans le carousel'), edit_carousel_attributes_admin_study_path(study), class: 'btn btn-default btn-xs' unless study.in_carousel? %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

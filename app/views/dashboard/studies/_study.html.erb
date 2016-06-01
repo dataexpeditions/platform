@@ -1,0 +1,17 @@
+<tr>
+  <td class="<%= 'text-muted' if study.deleted? %>"><%= study.title %></td>
+  <td><%= study.state %></td>
+  <td>
+    <%- if study.deleted? %>
+      <%= link_to 'réstaurer', edit_dashboard_study_path(study) %>
+    <%- else %>
+      <%= link_to icon('eye', "voir#{' et publier' if study.draft?}"), study_path(study), class: 'btn btn-default btn-xs' %>
+      <% if study.draft? %>
+        <%= link_to icon('edit', 'modifier'), edit_dashboard_study_path(study), class: 'btn btn-default btn-xs' %>
+        <%= link_to icon('close', 'supprimer'), dashboard_study_path(study), class: 'btn btn-danger btn-xs', method: :delete, confirm: 'Êtes vous sûr ?' %>
+      <% else %>
+        <%= link_to icon('edit', 'dupliquer et modifier'), duplicate_dashboard_study_path(study), class: 'btn btn-default btn-xs', method: :post %>
+      <% end %>
+    <%- end %>
+  </td>
+</tr>

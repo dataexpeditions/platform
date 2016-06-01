@@ -1,0 +1,48 @@
+<%- content_for :content do %>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="block white-block block-content">
+        <h2>Dashboard Menu</h2>
+        <ul>
+          <li><%= link_to 'Mes études', dashboard_studies_path %></li>
+          <li><%= link_to 'Mon compte', dashboard_profile_path %></li>
+        </ul>
+        <hr />
+        <% if current_user.admin? %>
+          <h2>Admin Menu</h2>
+          <ul>
+            <li>
+              <strong>Les études</strong>
+              <ul>
+                <% waiting_count = Study.waiting_for_review.count %>
+                <li><%= link_to "à valider (#{waiting_count})", to_review_admin_studies_path, class: ('text-danger' if waiting_count > 0) %></li>
+                <li><%= link_to "acceptées (#{Study.accepted.count})", accepted_admin_studies_path %></li>
+              </ul>
+            </li>
+            <li><%= link_to 'Liste des utilisateurs', admin_users_path %></li>
+            <li><%= link_to "Les catégories", admin_categories_path %></li>
+            <li><%= link_to "Les partenaires", admin_partners_path %></li>
+            <li>
+              <strong>Éditer les pages</strong>
+              <ul>
+                <li><%= link_to "la démarche", edit_admin_page_path(id: 'demarche') %></li>
+              </ul>
+            </li>
+          </ul>
+          <hr>
+        <% end %>
+        <ul>
+          <li><%= link_to 'Se deconnecter', destroy_user_session_path, method: :delete, class: 'text-danger' %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="block white-block block-content">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
+<%- end %>
+
+<%= render template: 'layouts/application' %>

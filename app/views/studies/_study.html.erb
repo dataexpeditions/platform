@@ -1,0 +1,9 @@
+<div class="col-sm-4">
+  <%= link_to study_path(study), class: 'block block-study' do %>
+    <%= image_tag study.tile_image.normal.url, class: 'block-background' %>
+    <div class="tile-infos">
+      <h2><%= study.title %></h2>
+      <p class="tile-summary"><%= study.summary %></p>
+    </div>
+  <% end %>
+</div>

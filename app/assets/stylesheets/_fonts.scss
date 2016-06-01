@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'AvenirLTStd55Roman';
+  src: asset-data-url('AvenirLTStd-Roman.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvenirLTStd45Book';
+  src: asset-data-url('AvenirLTStd-Book.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvenirLTStd65Medium';
+  src: asset-data-url('AvenirLTStd-Medium.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvenirLTStd85Heavy';
+  src: asset-data-url('AvenirLTStd-Heavy.otf') format('opentype');
+}
+@font-face {
+  font-family: 'AvenirLTStd95Black';
+  src: asset-data-url('AvenirLTStd-Black.otf') format('opentype');
+}
+
+$font-roman: AvenirLTStd55Roman, 'Helvetica Neue', Helvetica, sans-serif;
+$font-book: AvenirLTStd45Book, 'Helvetica Neue', Helvetica, sans-serif;
+$font-medium: AvenirLTStd65Medium, 'Helvetica Neue', Helvetica, sans-serif;
+$font-heavy: AvenirLTStd85Heavy, 'Helvetica Neue', Helvetica, sans-serif;
+$font-black: AvenirLTStd95Black, 'Helvetica Neue', Helvetica, sans-serif;

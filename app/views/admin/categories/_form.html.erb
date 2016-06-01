@@ -1,0 +1,8 @@
+<%= simple_form_for [:admin, @category], wrapper: :vertical_input_group do |f| %>
+  <%= f.input :name  %>
+  <%= f.input :tile_image, required: f.object.tile_image.blank? %>
+  <% if f.object.tile_image.present? %>
+    <p><%= image_tag(f.object.tile_image.normal.url) %></p>
+  <% end %>
+  <%= f.submit %>
+<% end %>

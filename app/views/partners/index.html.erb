@@ -1,0 +1,14 @@
+<div class="block white-block block-content">
+  <table class="partners-list">
+    <%- @partners.each do |partner| %>
+      <tr>
+        <td class="text-right">
+          <h2><%= partner.name %></h2>
+          <p><%= simple_format partner.description %></p>
+          <p><%= link_to "Visiter leur site", partner.website_url %></p>
+        </td>
+        <td><%= image_tag partner.logo.normal.url %></td>
+      </tr>
+    <%- end %>
+  </table>
+</div>

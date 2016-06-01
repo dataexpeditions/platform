@@ -1,0 +1,7 @@
+<%= simple_form_for @study, url: put_in_carousel_admin_study_path(@study), method: :post, wrapper: :vertical_input_group do |f| %>
+  <%= f.input :carousel_image %>
+  <% if f.object.carousel_image.present? %>
+    <%= image_tag f.object.carousel_image.carousel.url %>
+  <% end %>
+  <%= f.submit "Mettre dans le carousel" %>
+<% end %>

@@ -1,0 +1,16 @@
+<h1>Liste de vos études</h1>
+
+<%= link_to icon('plus', "Nouvelle étude"), new_dashboard_study_path, class: 'btn btn-default' %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @studies %>
+  </tbody>
+</table>

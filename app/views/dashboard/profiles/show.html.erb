@@ -1,0 +1,9 @@
+<%= simple_form_for @user, url: dashboard_profile_path, wrapper: :vertical_input_group do |f| %>
+  <%= f.input :name %>
+  <%= f.input :title %>
+  <%= f.input :avatar %>
+  <% if f.object.avatar.present? %>
+    <p><%= image_tag f.object.avatar.normal.url, class: 'avatar' %></p>
+  <% end %>
+  <%= f.submit %>
+<% end %>

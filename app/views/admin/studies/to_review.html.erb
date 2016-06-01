@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Auteur</th>
+      <th>En attente</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @studies.each do |study| %>
+      <tr>
+        <td><%= study.title %></td>
+        <td><%= study.author.name %></td>
+        <td><%= time_ago_in_words(study.submited_for_review_at) %></td>
+        <td><%= link_to 'voir', study_path(study), class: 'btn btn-default btn-xs' %></td>
+      </tr>>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,15 @@
+<%= link_to "Nouvelle categorie", new_admin_category_path %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Categorie</th>
+      <th>Nombre d'études</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @categories %>
+  </tbody>
+</table>
+

@@ -1,0 +1,41 @@
+<div class="row">
+  <% if @study.draft? %>
+    <div class="col-md-12">
+      <div class="block white-block block-content clearfix">
+        <div class="pull-right">
+          <%= button_to "Publier", submit_for_review_dashboard_study_path(@study), class: 'btn btn-success' %>
+        </div>
+        <p>Cette étude est au status de brouillon.</p>
+      </div>
+    </div>
+  <% end %>
+  <% if @study.waiting_for_review? %>
+    <div class="col-md-12">
+      <div class="block white-block block-content clearfix">
+        <div class="pull-right">
+          <%= button_to "Accepter", accept_admin_study_path(@study), class: 'btn btn-success' %>
+          <%= button_to "Refuser", reject_admin_study_path(@study), class: 'btn btn-danger' %>
+        </div>
+        <p>Cette étude à été publié le <strong><%= l @study.submited_for_review_at %></strong></p>
+      </div>
+    </div>
+  <% end %>
+  <div class="col-md-8">
+    <div class="block white-block block-content">
+      <h1><%= @study.title %></h1>
+      <%= raw @study.body.html_safe %>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <% if @study.github_url.present?  %>
+      <%= link_to @study.github_url, class: "block block-github block-content" do %>
+        <%= icon('github', 'Voir sur github') %>
+      <% end %>
+    <% end %>
+    <div class="block block-content white-block clearfix block-author">
+      <%= image_tag @study.author.avatar.url, class: 'pull-left avatar' %>
+      <h3><%= @study.author.name %></h3>
+      <p><em><%= @study.author.title %></em></p>
+    </div>
+  </div>
+</div>

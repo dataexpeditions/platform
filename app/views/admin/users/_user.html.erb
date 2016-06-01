@@ -1,0 +1,5 @@
+<tr>
+  <td><%= user.name %></td>
+  <td><%= link_to user.email, "mailto:#{user.name}<#{user.email}>"  %></td>
+  <td><%= l user.created_at, format: :long %></td>
+</tr>

@@ -1,0 +1,35 @@
+.header {
+  background: white;
+  margin-top: 20px;
+  height: 70px;
+
+  h1 {
+    font-family: $font-heavy;
+  }
+
+  .links {
+    text-align: center;
+    line-height: 70px;
+  }
+
+  a {
+    display: inline-block;
+    text-transform: uppercase;
+    margin: 0 8px;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

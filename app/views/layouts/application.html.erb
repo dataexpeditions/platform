@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dataexpeditions</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+    <div class="background-texture-wrapper">
+      <div class="container">
+        <div class="header white-block">
+          <div class="row">
+            <div class="col-md-4">
+              <h1><%= link_to 'Data Expéditions', root_path %></h1>
+            </div>
+            <div class="col-md-8 links">
+              <%= link_to "Accueil", root_path %>
+              <%= link_to "Études", studies_path %>
+              <%= link_to "Partenaires", partners_path %>
+              <%= link_to "La démarche", page_path(id: 'demarche') %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% %i(success danger).each do |flash_type| %>
+        <% if flash[flash_type] %>
+          <div class="container">
+            <div class="block block-content block-<%= flash_type %>">
+              <%= flash[flash_type] %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <div class="container">
+        <%= content_for?(:content) ? yield(:content) : yield %>
+      </div>
+    </div>
+    <%= render '/shared/footer' %>
+  </body>
+</html>
