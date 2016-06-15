@@ -3,8 +3,8 @@
   <%= f.input :description, as: :text %>
   <%= f.input :website_url%>
   <%= f.input :logo, required: !f.object.logo? %>
-  <% if f.object.logo %>
-    <%= image_tag f.object.logo.url %>
+  <% if f.object.logo? %>
+    <%= image_tag f.object.logo.normal.url %>
   <% end %>
   <%= f.submit %>
 <% end %>
