@@ -7,7 +7,7 @@ class StudiesController < ApplicationController
   end
 
   def show
-    auhtorize! :read, @study
+    authorize! :read, @study
   end
 
   protected
