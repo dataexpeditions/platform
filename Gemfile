@@ -60,4 +60,5 @@ group :production do
   gem 'fog'
   gem 'pg'
   gem 'rollbar'
+  gem 'newrelic_rpm'
 end
