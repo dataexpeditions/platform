@@ -2,9 +2,6 @@ def open_fixture_file(filename)
   File.open(Rails.root.join('test', 'fixtures', 'files', filename))
 end
 
-category_1 = Category.create! name: 'cat 1',
-  tile_image: open_fixture_file('carousel_item_2.jpg')
-
 Partner.create! name: 'SNCF', website_url: 'http://www.scnf.com',
   logo: open_fixture_file('sncf.png')
 Partner.create! name: 'RATP', website_url: 'http://www.ratp.fr/',
