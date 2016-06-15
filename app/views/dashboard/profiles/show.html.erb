@@ -3,8 +3,6 @@
   <%= f.input :name %>
   <%= f.input :title %>
   <%= f.input :avatar %>
-  <% if f.object.avatar.present? %>
-    <p><%= image_tag f.object.avatar.normal.url, class: 'avatar' %></p>
-  <% end %>
+  <p><%= image_tag f.object.avatar.normal.url, class: 'avatar' %></p>
   <%= f.submit %>
 <% end %>
