@@ -27,7 +27,7 @@ class Admin::StudiesController < Admin::BaseController
   def put_in_carousel
     @study.in_carousel = true
     if @study.update carousel_params
-      Study.where(in_carousel: true).where('id IS NOT ?', @study.id).update_all(in_carousel: false)
+      Study.where(in_carousel: true).where('id <> ?', @study.id).update_all(in_carousel: false)
       flash[:success] = "L'image à été placée dans le carousel."
       redirect_to edit_carousel_attributes_admin_study_path(@study)
     else

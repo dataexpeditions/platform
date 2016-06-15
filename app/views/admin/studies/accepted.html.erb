@@ -16,7 +16,7 @@
         <td>
           <%= link_to icon('eye', 'voir'), study_path(study), class: 'btn btn-default btn-xs' %>
           <%= link_to icon('edit', 'modifier'), edit_admin_study_path(study), class: 'btn btn-default btn-xs' %>
-          <%= link_to icon('image', 'placer dans le carousel'), edit_carousel_attributes_admin_study_path(study), class: 'btn btn-default btn-xs' unless study.in_carousel? %>
+          <%= link_to icon('image', 'placer dans le carousel'), edit_carousel_attributes_admin_study_path(study), class: 'btn btn-default btn-xs' %>
         </td>
       </tr>
     <% end %>
