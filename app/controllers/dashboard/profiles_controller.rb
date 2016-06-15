@@ -19,6 +19,6 @@ class Dashboard::ProfilesController < Dashboard::BaseController
   end
 
   def profile_params
-    params.require(:user).permit(:name, :avatar)
+    params.require(:user).permit(:name, :title, :avatar)
   end
 end
