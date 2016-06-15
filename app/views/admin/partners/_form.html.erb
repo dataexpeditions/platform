@@ -1,7 +1,10 @@
 <%= simple_form_for [:admin, @partner], wrapper: :vertical_input_group do |f| %>
   <%= f.input :name %>
   <%= f.input :description, as: :text %>
-  <%= f.input :logo %>
-  <%= f.input :website_url %>
+  <%= f.input :website_url%>
+  <%= f.input :logo, required: !f.object.logo? %>
+  <% if f.object.logo %>
+    <%= image_tag f.object.logo.url %>
+  <% end %>
   <%= f.submit %>
 <% end %>

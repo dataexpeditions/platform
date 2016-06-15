@@ -19,7 +19,9 @@ class Admin::PartnersController < Admin::BaseController
   protected
 
   def partner_params
-    params.require(:partner).permit(:name, :logo, :website_url, :description)
+    res = params.require(:partner).permit(:name, :logo, :website_url, :description)
+    res.delete(:logo) if res[:logo] == ''
+    res
   end
 
   def load_partner
