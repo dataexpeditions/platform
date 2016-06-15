@@ -1,7 +1,7 @@
 class Ability
   include CanCan::Ability
 
-  def initializer(user)
+  def initialize(user = nil)
     if user && user.admin?
       can :manage, :all
       return
@@ -10,10 +10,10 @@ class Ability
     can %i(read show index), Study do |study|
       study.accepted? || study.author == user
     end
-    can %i(update edit destroy submit_for_review), Study do
+    can %i(update edit destroy submit_for_review), Study do |study|
       study.draft? && study.author == user
     end
-    can :duplicate do
+    can :duplicate, Study do |study|
       study.author == user
     end
   end
