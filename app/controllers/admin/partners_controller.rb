@@ -8,6 +8,20 @@ class Admin::PartnersController < Admin::BaseController
   def edit
   end
 
+  def new
+    @partner = Partner.new
+  end
+
+  def create
+    @partner = Partner.new partner_params
+    if @partner.save
+      flash[:success] = "Le partenaire à bien été ajouté."
+      redirect_to admin_partners_path
+    else
+      render 'new'
+    end
+  end
+
   def update
     if @partner.update partner_params
       redirect_to admin_partners_path
