@@ -1,4 +1,4 @@
 <%= simple_form_for [:admin, @page], wrapper: :vertical_input_group, html: { data: { behavior: 'tinymce-upload' } } do |f| %>
-  <%= f.input :body %>
+  <%= f.input :body, input_html: { data: { behavior: 'tinymce-upload-input'} } %>
   <%= f.submit %>
 <% end %>
