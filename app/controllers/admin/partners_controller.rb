@@ -30,6 +30,12 @@ class Admin::PartnersController < Admin::BaseController
     end
   end
 
+  def destroy
+    @partner.destroy!
+    flash[:success] = "Le partenaire à été supprimé avec succès."
+    redirect_to admin_partners_path
+  end
+
   protected
 
   def partner_params
