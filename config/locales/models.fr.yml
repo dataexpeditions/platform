@@ -8,6 +8,7 @@ fr:
     attributes:
       user:
         email: Adresse email
+        name: Nom
       study:
         state: État
       study/state:
