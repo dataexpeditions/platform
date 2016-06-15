@@ -6,6 +6,7 @@ class Dashboard::ProfilesController < Dashboard::BaseController
 
   def update
     if @user.update profile_params
+      flash[:success] = "Votre profile à bien été mis à jour."
       redirect_to action: :show
     else
       render 'show', status: :unprocessable_entity
