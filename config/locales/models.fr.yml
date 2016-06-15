@@ -1,0 +1,17 @@
+fr:
+  activerecord:
+    models:
+      study: Étude
+      user: Utilisateur
+      partner: Partenaire
+      category: Catégorie
+    attributes:
+      user:
+        email: Adresse email
+      study:
+        state: État
+      study/state:
+          draft: brouillon
+          accepted: accepté
+          waiting_for_review: "en attente d'examination"
+          rejected: refusé

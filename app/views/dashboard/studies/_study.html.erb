@@ -1,6 +1,6 @@
 <tr>
   <td class="<%= 'text-muted' if study.deleted? %>"><%= study.title %></td>
-  <td><%= study.state %></td>
+  <td><%= Study.human_attribute_name "state.#{study.state}" %></td>
   <td>
     <%- if study.deleted? %>
       <%= link_to 'réstaurer', edit_dashboard_study_path(study) %>

@@ -1,0 +1,8 @@
+---
+fr:
+  studies:
+    state_names:
+      draft: brouillon
+      accepted: accepté
+      waiting_for_review: "en attente d'examination"
+      rejected: refusé

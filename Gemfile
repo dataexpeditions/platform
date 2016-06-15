@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.0'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
+gem 'devise-i18n'
 gem 'cancancan', '~> 1.15'
 
 gem 'mini_magick'
