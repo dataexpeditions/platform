@@ -59,4 +59,5 @@ group :production do
   gem 'rails_12factor'
   gem 'fog'
   gem 'pg'
+  gem 'rollbar'
 end
