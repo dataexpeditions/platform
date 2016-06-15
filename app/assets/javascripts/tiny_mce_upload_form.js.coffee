@@ -1,11 +1,16 @@
+input_selector = "[data-behavior='tinymce-upload-input']"
+form_selector = "[data-behavior='tinymce-upload']"
+
 class TinyMCEUploadForm
   constructor: (form_element) ->
     @form_element = form_element
     @initTinyMCE()
 
   initTinyMCE: () ->
+    while tinymce.editors.length > 0
+      tinymce.remove(tinymce.editors[0])
     tinyMCE.init
-      selector: 'textarea'
+      selector: input_selector
       plugins: 'paste'
       paste_data_images: true
       images_upload_handler: @imageUploadHandler
@@ -15,8 +20,8 @@ class TinyMCEUploadForm
       e.preventDefault()
       tinymce.activeEditor.uploadImages (success) ->
         submit()
-    $('textarea', @form_element).removeAttr 'required'
-    $('textarea', @form_element).removeAttr 'aria-required'
+    $(input_selector, @form_element).removeAttr 'required'
+    $(input_selector, @form_element).removeAttr 'aria-required'
 
   imageUploadHandler: (blobInfo, success, failure) ->
     xhr = new XMLHttpRequest()
@@ -37,5 +42,6 @@ class TinyMCEUploadForm
     xhr.send(formData)
 
 document.addEventListener "turbolinks:load", ->
-  $.map $("[data-behavior='tinymce-upload']"), (form_element) ->
+  console.log 'change page'
+  $.map $(form_selector), (form_element) ->
     new TinyMCEUploadForm(form_element)
