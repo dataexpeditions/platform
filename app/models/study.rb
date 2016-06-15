@@ -44,6 +44,7 @@ class Study < ActiveRecord::Base
 
   validates :title, presence: true
   validates :body, presence: true
+  validates :category, presence: true
   validates_presence_of :carousel_image, if: :in_carousel?
 
   scope :active, -> { where('deleted_at IS NULL') }
