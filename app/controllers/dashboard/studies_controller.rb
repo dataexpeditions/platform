@@ -52,7 +52,7 @@ class Dashboard::StudiesController < Dashboard::BaseController
   protected
 
   def study_params
-    params.require(:study).permit(:title, :category_id, :body, :summary)
+    params.require(:study).permit(:title, :category_id, :body, :summary, :github_url)
   end
 
   def load_study
