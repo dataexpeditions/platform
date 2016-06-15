@@ -11,6 +11,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   def default_url(*args)
-    ActionController::Base.helpers.asset_path("fallback/avatar_default.png")
+    ActionController::Base.helpers.asset_path("avatar_default.png")
   end
 end
